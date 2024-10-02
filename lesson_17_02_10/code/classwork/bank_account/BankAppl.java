@@ -35,6 +35,9 @@ account001.display();
 account001.withdraw(100);//деньги сняты в 0
 account001.display();
 
+account002.withdraw(250);
+account002.display();
+
 
 
 
