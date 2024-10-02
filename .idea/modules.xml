@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AIT-TR Java-course-2024.iml" filepath="$PROJECT_DIR$/.idea/AIT-TR Java-course-2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_01_intro/lesson_01_intro.iml" filepath="$PROJECT_DIR$/lesson_01_intro/lesson_01_intro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_02/lesson_02.iml" filepath="$PROJECT_DIR$/lesson_02/lesson_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_03/lesson_03.iml" filepath="$PROJECT_DIR$/lesson_03/lesson_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_04/lesson_04.iml" filepath="$PROJECT_DIR$/lesson_04/lesson_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_05_условныйОператор/lesson_05_условныйОператор.iml" filepath="$PROJECT_DIR$/lesson_05_условныйОператор/lesson_05_условныйОператор.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_06_ternaryOperator/lesson_06_ternaryOperator.iml" filepath="$PROJECT_DIR$/lesson_06_ternaryOperator/lesson_06_ternaryOperator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_07/lesson_07.iml" filepath="$PROJECT_DIR$/lesson_07/lesson_07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_08/lesson_08.iml" filepath="$PROJECT_DIR$/lesson_08/lesson_08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_09/lesson_09.iml" filepath="$PROJECT_DIR$/lesson_09/lesson_09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_10_23_09_massiv/lesson_10_23_09_massiv.iml" filepath="$PROJECT_DIR$/lesson_10_23_09_massiv/lesson_10_23_09_massiv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_11_24_09_massiv/lesson_11_24_09_massiv.iml" filepath="$PROJECT_DIR$/lesson_11_24_09_massiv/lesson_11_24_09_massiv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/theory/theory.iml" filepath="$PROJECT_DIR$/theory/theory.iml" />
+    </modules>
+  </component>
+</project>

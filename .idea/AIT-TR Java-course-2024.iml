@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/lesson_01_intro/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_02/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_03/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_04/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_05_условныйОператор/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_06_ternaryOperator/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_07/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_08/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_09/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_10_23_09_massiv/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_11_24_09_massiv/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/theory/theory_java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_12_25_09/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_13_26_09/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_14_27_09/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_15_30_09/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/methods/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_16_01_10/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_17_02_10/code" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
