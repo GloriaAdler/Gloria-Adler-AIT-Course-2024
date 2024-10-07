@@ -38,10 +38,5 @@ account001.display();
 account002.withdraw(250);
 account002.display();
 
-
-
-
-
-
     }
 }
