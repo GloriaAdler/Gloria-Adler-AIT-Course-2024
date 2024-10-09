@@ -32,4 +32,5 @@ public class Task3_09_10 {
             default -> System.out.println("Неверный тип: " + type);
         }
     }
+
 }

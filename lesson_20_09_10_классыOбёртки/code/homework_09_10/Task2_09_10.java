@@ -55,4 +55,5 @@ public class Task2_09_10 {
         System.out.println("Предложение: " + sentenceType);
 
     }
+
 }

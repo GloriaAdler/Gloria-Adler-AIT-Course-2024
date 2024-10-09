@@ -17,4 +17,5 @@ public class Task1_09_10 {
         System.out.println("Sum: " + sum);
 
     }
+
 }
