@@ -1,4 +1,4 @@
-package classwork_10_10.classwork_10_10_string_numbers_tdd;
+package classwork_10_10.string_numbers_tdd;
 
 public class StringWithNumbers {
     //fields
