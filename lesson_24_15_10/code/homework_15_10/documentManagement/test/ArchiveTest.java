@@ -1,4 +1,5 @@
-package homework_15_10.documentManagement.controller;
+package homework_15_10.documentManagement.test;
+import homework_15_10.documentManagement.controller.Archive;
 import homework_15_10.documentManagement.model.Document;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
