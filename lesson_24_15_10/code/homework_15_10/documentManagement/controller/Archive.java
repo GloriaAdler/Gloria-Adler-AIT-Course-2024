@@ -37,46 +37,34 @@ public class Archive {
             System.out.println(documents[i]);
         }
     }
-    //!!!!!!!
+
     public  Document findDocument(long documentNumber){
-        // Проходим по всем документам в массиве:
+
         for (int i = 0; i < size; i++) {
-            // Проверяем, совпадает ли ИИН текущего документа с переданным ИИН
-            // documents[i].getIin() возвращает ИИН текущего документа
-            if(documents[i].getDocumentNumber() == documentNumber){// Убеждаемся, что вызов getIin() корректный
-                return documents[i];                  // Возвращаем найденный документ
+            if(documents[i].getDocumentNumber() == documentNumber){
+                return documents[i];
             }
         }
-        // Если документ с указанным ИИН не найден, возвращаем null:
-        return null;
+        return null;//если документ с нужным номером не найден, возвращаем null:
     }
 
 
-    // Метод для удаления документа по уникальному идентификационному номеру (IIN):
-    public Document removeDocument (long documentNumber){
-        // Проходим по всем документам в массиве:
-        for (int i = 0; i < size; i++) {
-            // Проверяем, совпадает ли IIN текущего документа с переданным IIN:
-            if(documents[i].getDocumentNumber() == documentNumber){
-                // Сохраняем ссылку на документ, который будем удалять (жертва):
+    public Document removeDocument (long documentNumber){ // Метод для удаления документа по номеру
+
+        for (int i = 0; i < size; i++) {//проходим по всему массиву
+            if(documents[i].getDocumentNumber() == documentNumber){ // ищем совпадение переданного номера с имеющимися
                 Document victim = documents[i];
-                // Заменяем удаляемый документ последним документом в массиве:
-                documents[i] = documents[size - 1];
+                documents[i] = documents[size - 1];//заменяем удаляемый документ, последним документом в массиве
                 // Затираем ссылку на последний документ, чтобы избежать утечек памяти:
-                documents[size - 1] = null;
-                // Уменьшаем размер массива на 1, так как один документ удален
+                documents[size - 1] = null;//затираем последний элемент массива и уменьшаем size
                 size--;
-                // Возвращаем ссылку на удалённый документ
                 return victim;
             }
         }
-        return null; // Если документ с указанным IIN не найден, возвращаем null
+        return null; //если документ с нужным номером не найден, возвращаем null
     }
-
-    // boolean updateDocument()
 
     public int size(){
         return size;
     }
-
 }
