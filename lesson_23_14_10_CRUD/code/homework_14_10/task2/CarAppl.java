@@ -1,12 +1,12 @@
 package homework_14_10.task2;
 
-public class Planner {
+public class CarAppl {
     public static void main(String[] args) {
 
         double distance = 3000;
 
         // Данные о машинах
-        Car car1 = new Car("Audi", 'd', 1.6, 6.6, 45);
+        Car car1 = new Car("Audi", 'd', 1.6, 6.6, 45);//new Car - этот Car это конструктор от метода Car! не класс Car, имена класса и конструктора совпадают, но вызывается именно метод-конструктор.
         Car car2 = new Car("BMW", 'b', 1.8, 6.8, 49);
         Car car3 = new Car("Opel", 'd', 1.6, 6.9, 45);
         Car car4 = new Car("VW", 'd', 1.6, 6.5, 39);

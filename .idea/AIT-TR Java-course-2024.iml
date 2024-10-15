@@ -28,6 +28,8 @@
       <sourceFolder url="file://$MODULE_DIR$/lesson_21_10_10_UnitТестирование/code" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lesson_22_11_10/code" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lesson_23_14_10_CRUD/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_24_15_10/code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson_24_15_10_CRUD/code" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
