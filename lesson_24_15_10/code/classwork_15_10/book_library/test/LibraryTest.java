@@ -74,5 +74,12 @@ class LibraryTest {
         library.printBooks();
     }
 
+    @Test
+    void updateBooTest(){
+        Book newBook = new Book("New book", "A4", 1_111_111_111_114L, 2025);
+        library.addBook(newBook);
+        //library.update
+    }
+
 
 }

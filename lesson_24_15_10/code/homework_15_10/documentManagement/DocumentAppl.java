@@ -3,7 +3,7 @@ package homework_15_10.documentManagement;
 import homework_15_10.documentManagement.controller.Archive;
 import homework_15_10.documentManagement.model.Document;
 
-public class TestMethods {
+public class DocumentAppl {
     public static void main(String[] args) {
 
         Archive archive = new Archive(3); // Создаем архив с вместимостью 3 документа
