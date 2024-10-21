@@ -1,6 +1,5 @@
 package homework_17_10.dao;
 
-import classwork_17_10.ait.employee.model.Employee;
 import homework_17_10.model.Detail;
 
 public class StockImpl implements Stock {
