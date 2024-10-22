@@ -1,12 +1,12 @@
-package classwork_21_10.car_garage.ait.cars.dau;
+package homework_22_10.carCopy.cars.dau;
 
-import classwork_21_10.car_garage.ait.cars.model.Car;
+import homework_22_10.carCopy.cars.model.Car;
 
 import java.util.function.Predicate;
 
-public class GarageImpl implements Garage{
+public class GarageImpl implements Garage {
 
-    private Car [] cars;
+    private Car[] cars;
     private int size;
 
     public GarageImpl(int campacity) {//нужно переделать стандартный конструктор под себя
@@ -25,6 +25,15 @@ public class GarageImpl implements Garage{
 
     @Override
     public Car removeCar(String regNumber) {
+        for (int i = 0; i < size; i++) {
+            if (cars [i].getRegNumber() == regNumber){
+                Car victim = cars [i];
+                cars [i] = cars [size-1];//на место жертвы копируем (ставим) последний элемент массива
+                cars [size-1] = null;//последний элемент затрем с помощью null, [size] - это последняя пустая ячейка, поэтому -1
+                size--;
+                return victim;
+            }
+        }
         return null;
     }
 
@@ -34,7 +43,6 @@ public class GarageImpl implements Garage{
             if (cars[i].getRegNumber().equals(regNumber)){//этот getRegNumber должен сравниться с String regNumber
                 return cars[i];
             }
-
         }
         return null;
     }
@@ -80,7 +88,7 @@ public class GarageImpl implements Garage{
             }
         }
         //читаем массив и перекладываем результаты в новый массив
-        Car [] res = new Car[count];
+        Car[] res = new Car[count];
         for (int i = 0, j = 0 ; j < res.length; i++) {
             if(predicate.test(cars[i])){//объект проходит тест
                 res[j++] = cars[i];

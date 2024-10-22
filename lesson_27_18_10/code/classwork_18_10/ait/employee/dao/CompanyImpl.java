@@ -81,7 +81,7 @@ public class CompanyImpl implements Company {//наследование из и�
         }
         return totalSalary;
     }
-//!!!!!
+
     @Override
     public double averageSalary() {
         return totalSalary()/size;
@@ -91,7 +91,7 @@ public class CompanyImpl implements Company {//наследование из и�
     public double totalSales() {
         double totalSales = 0;
         for (int i = 0; i < size; i++) {
-            if (employees[i]instanceof SalesManager){//обязательная проверка перед кастингом, кастинг должен быть безопасным!!! иначе будут вылезать ошибки
+            if (employees[i]instanceof SalesManager){//обязательная проверка перед кастингом - instanceof, кастинг должен быть безопасным!!! иначе будут вылезать ошибки
                 SalesManager sm = (SalesManager) employees[i];//sm - правильного типа объект, только после этого можно вытащить getSalesValue. (SalesManager) - это безопасный кастинг
                 totalSales += sm.getSalesValue();
             }
