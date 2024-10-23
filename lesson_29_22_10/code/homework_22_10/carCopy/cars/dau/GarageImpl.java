@@ -2,6 +2,7 @@ package homework_22_10.carCopy.cars.dau;
 
 import homework_22_10.carCopy.cars.model.Car;
 
+import java.util.Comparator;
 import java.util.function.Predicate;
 
 public class GarageImpl implements Garage {
@@ -77,6 +78,17 @@ public class GarageImpl implements Garage {
         for (int i = 0; i < size; i++) {
             System.out.println(cars[i]);
         }
+    }
+
+    @Override
+    public Car[] printAllCarsSortedByColor() {//еще один способ создания сортирующего метода
+        Comparator <Car> comparatorByColor = new Comparator<Car>() {
+            @Override
+            public int compare(Car car1, Car car2) {
+                return car1.getColor().compareTo(car2.getColor());
+            }
+        };
+        return null;
     }
 
     // в этот метод передаем логическое выражение, которое будет тестировать объекты типа Car
