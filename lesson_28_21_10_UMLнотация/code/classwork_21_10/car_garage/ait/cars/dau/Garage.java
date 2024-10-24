@@ -14,4 +14,5 @@ public interface Garage {
     int size ();
     void printCars ();
 
+
 }

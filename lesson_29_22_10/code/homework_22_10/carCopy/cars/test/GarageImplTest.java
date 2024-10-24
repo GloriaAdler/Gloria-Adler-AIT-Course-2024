@@ -16,10 +16,10 @@ class GarageImplTest {
     void setUp() {
         garage = new GarageImpl(5);
         cars = new Car[4];
-        cars[0] = new Car("Number1", "BMW", "Company1", 1.5, "Red", 2010, 13000);
-        cars[1] = new Car("Number2", "VW", "Company1", 2.5, "Green", 2020, 20000);
-        cars[2] = new Car("Number3", "BMW", "Company2", 1.5, "Red", 2021, 30000);
-        cars[3] = new Car("Number4", "OPEL", "Company2", 2.0, "Green", 2015, 10000);
+        cars[0] = new Car("Number1", "BMW", "X3", "Company1", 1.5, "Red", 2010, 13000);
+        cars[1] = new Car("Number2", "VW", "Golf", "Company1", 2.5, "Green", 2020, 20000);
+        cars[2] = new Car("Number3", "BMW", "X5", "Company2", 1.5, "Red", 2021, 30000);
+        cars[3] = new Car("Number4", "OPEL", "Astra", "Company2", 2.0, "Green", 2015, 10000);
 
         //TODO add cars to garage
         for (int i = 0; i < 4; i++) {
@@ -36,12 +36,12 @@ class GarageImplTest {
         //can't add dublicate
         assertFalse(garage.addCar(cars[1]));
         //can add new car
-        Car newCar = new Car("Number5", "BMW", "Company1", 1.5, "Red", 2010, 13000);
+        Car newCar = new Car("Number5", "BMW", "X2", "Company1", 1.5, "Red", 2010, 13000);
         assertTrue(garage.addCar(newCar));
         //check size
         assertEquals(5, garage.size());
         //can't add one more car
-        Car oneMoreCar = new Car("Number6", "BMW", "Company1", 1.5, "Red", 2010, 13000);
+        Car oneMoreCar = new Car("Number6", "BMW", "X2", "Company1", 1.5, "Red", 2010, 13000);
         assertFalse(garage.addCar(oneMoreCar));
     }
 

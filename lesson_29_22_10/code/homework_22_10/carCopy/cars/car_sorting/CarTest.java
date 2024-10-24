@@ -1,4 +1,5 @@
 package homework_22_10.carCopy.cars.car_sorting;
+import homework_22_10.carCopy.cars.dau.GarageImpl;
 import homework_22_10.carCopy.cars.model.Car;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,10 +13,10 @@ class CarTest {
     @BeforeEach
     void setUp() {
         cars = new Car[4];
-        cars[0] = new Car("Number1", "BMW", "Company1", 1.5, "Red", 2010, 13000);
-        cars[1] = new Car("Number2", "VW", "Company1", 2.5, "Green", 2020, 20000);
-        cars[2] = new Car("Number3", "BMW", "Company2", 1.5, "Red", 2021, 30000);
-        cars[3] = new Car("Number4", "OPEL", "Company2", 2.0, "Green", 2015, 10000);
+        cars[0] = new Car("Number1", "BMW", "X3", "Company1", 1.5, "Red", 2010, 13000);
+        cars[1] = new Car("Number2", "VW", "Golf", "Company1", 2.5, "Green", 2020, 20000);
+        cars[2] = new Car("Number3", "BMW", "X5", "Company2", 1.5, "Red", 2021, 30000);
+        cars[3] = new Car("Number4", "OPEL", "Astra", "Company2", 2.0, "Green", 2015, 10000);
     }
 
     @Test
@@ -77,6 +78,40 @@ class CarTest {
         Arrays.sort(cars, comparatorByColor);//sorting by model
 
         System.out.println("--------------------List cars sorted by color------------------");
+        printCars();//print
+    }
+
+    @Test
+    void sortCarsByBrandTest (){
+        Comparator <Car> comparatorByBrand = new Comparator<Car>() {
+            @Override
+            public int compare(Car o1, Car o2) {
+                return o1.getBrand().compareTo(o2.getBrand());//compareTo - for String
+            }
+        };
+        System.out.println("--------------------List cars as is------------------");
+        printCars();
+
+        Arrays.sort(cars, comparatorByBrand);//sorting by model
+
+        System.out.println("--------------------List cars sorted by brand------------------");
+        printCars();//print
+    }
+
+    @Test
+    void sortCarsByCompanyTest (){
+        Comparator <Car> comparatorByCompany = new Comparator<Car>() {
+            @Override
+            public int compare(Car o1, Car o2) {
+                return o1.getCompany().compareTo(o2.getCompany());//compareTo - for String
+            }
+        };
+        System.out.println("--------------------List cars as is------------------");
+        printCars();
+
+        Arrays.sort(cars, comparatorByCompany);//sorting by model
+
+        System.out.println("--------------------List cars sorted by company------------------");
         printCars();//print
     }
 

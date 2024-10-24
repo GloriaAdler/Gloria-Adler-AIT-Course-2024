@@ -91,6 +91,28 @@ public class GarageImpl implements Garage {
         return null;
     }
 
+    @Override
+    public Car[] printAllCarsSortedByBrand() {
+        Comparator <Car> comparatorByBrand = new Comparator<Car>() {
+            @Override
+            public int compare(Car o1, Car o2) {
+                return o1.getBrand().compareTo(o1.getBrand());
+            }
+        };
+        return null;
+    }
+
+    @Override
+    public Car[] printAllCarsSortedByCompany() {
+        Comparator <Car> comparatorByCompany = new Comparator<Car>() {
+            @Override
+            public int compare(Car o1, Car o2) {
+                return o1.getCompany().compareTo(o2.getCompany());
+            }
+        };
+        return null;
+    }
+
     // в этот метод передаем логическое выражение, которое будет тестировать объекты типа Car
     private Car[] findCarsByPredicate (Predicate <Car> predicate){//Predicate (проверяет какое-то условие) - логическое выражение. (Predicate <Car> predicate) - это только шаблон для метод тестов выше
         int count = 0;

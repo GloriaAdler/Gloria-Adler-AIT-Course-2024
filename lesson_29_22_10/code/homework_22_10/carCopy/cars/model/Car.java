@@ -9,6 +9,7 @@ import java.util.Objects;
 public class Car implements Comparable <Car> {
 
      private String regNumber;
+    private String brand;
      private String model;
      private String company;
      private double engine; // engine - двигатель
@@ -16,8 +17,9 @@ public class Car implements Comparable <Car> {
      private int age;
      private double price;
 
-    public Car(String regNumber, String model, String company, double engine, String color, int age, double price) {
+    public Car(String regNumber, String brand, String model, String company, double engine, String color, int age, double price) {
         this.regNumber = regNumber;
+        this.brand = brand;
         this.model = model;
         this.company = company;
         this.engine = engine;
@@ -29,42 +31,63 @@ public class Car implements Comparable <Car> {
     public String getRegNumber() {
         return regNumber;
     }
+
     public void setRegNumber(String regNumber) {
         this.regNumber = regNumber;
     }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
     public String getModel() {
         return model;
     }
+
     public void setModel(String model) {
         this.model = model;
     }
+
     public String getCompany() {
         return company;
     }
+
     public void setCompany(String company) {
         this.company = company;
     }
+
     public double getEngine() {
         return engine;
     }
+
     public void setEngine(double engine) {
         this.engine = engine;
     }
+
     public String getColor() {
         return color;
     }
+
     public void setColor(String color) {
         this.color = color;
     }
+
     public int getAge() {
         return age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
+
     public double getPrice() {
         return price;
     }
+
     public void setPrice(double price) {
         this.price = price;
     }
@@ -73,6 +96,7 @@ public class Car implements Comparable <Car> {
     public String toString() {
         final StringBuilder sb = new StringBuilder("Car{");
         sb.append("regNumber='").append(regNumber).append('\'');
+        sb.append(", brand='").append(brand).append('\'');
         sb.append(", model='").append(model).append('\'');
         sb.append(", company='").append(company).append('\'');
         sb.append(", engine=").append(engine);
@@ -87,19 +111,17 @@ public class Car implements Comparable <Car> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Car car)) return false;
-        return Double.compare(engine, car.engine) == 0 && age == car.age && Double.compare(price, car.price) == 0 && Objects.equals(regNumber, car.regNumber) && Objects.equals(model, car.model) && Objects.equals(company, car.company) && Objects.equals(color, car.color);
+        return Double.compare(engine, car.engine) == 0 && age == car.age && Double.compare(price, car.price) == 0 && Objects.equals(regNumber, car.regNumber) && Objects.equals(brand, car.brand) && Objects.equals(model, car.model) && Objects.equals(company, car.company) && Objects.equals(color, car.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regNumber, model, company, engine, color, age, price);
+        return Objects.hash(regNumber, brand, model, company, engine, color, age, price);
     }
 
     @Override
     public int compareTo(Car car) {
         return this.getAge() - car.age;
     }
-    //public int compareTo(Wine wine) {//метод для сравнения объектов (вин)
-    //        return this.getAge() - wine.age;//сравнение численных типов делается вычитанием
-    //    }
+
 }//end of class
