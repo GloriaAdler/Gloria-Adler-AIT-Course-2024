@@ -1,0 +1,1 @@
+ENUM (Electronic Number Mapping System — электронная система отображения номеров)

@@ -104,17 +104,29 @@ class CityTest {
         citiesCopy7[index] = city;
         cities = citiesCopy7;//переопределили ссылку на массив, теперь наш массив содержит 7 городов
         printArray(cities, "List with added city");
-
-
-
     }
 
+    //25.10.2024
+//    Проверьте работу метода System.arraycopy, скопировав часть массива.
+//    Проверьте работу метода Arrays.copyOfRange
 
+    @Test
+    void testSystemArrayCopy () {
+        //расширить массив на 2 элемента
+        City[] citiesCopyPlus2 = new City[cities.length + 2];
+        //копируем имеющийся массив в новый
+        System.arraycopy(cities, 0, citiesCopyPlus2, 0, 4);//cities - донорский массив - отсюда берем, 0 - берем с нулевой позиции, citiesCopyPlus2 - куда несем, 0 - хотим поставить с нуля, 4 - берем длину только 4, т.е. первые 4 элемента)
+        printArray(cities, "Original array");
+        printArray(citiesCopyPlus2, "Copy of array");
+    }
 
-
-
-
-
+    //проверте работу метода Arrays.copyOfRange
+    @Test
+    void testArraysCopyOfRange (){
+        City[] citiesCopy = Arrays.copyOfRange (cities, 2, cities.length + 2);// cities - берем от сюда, 2 - с этого индекса, cities.length - длину массива, +2 - можно добавить длину
+        printArray(cities, "Original (source) array");
+        printArray(citiesCopy, "Copy of range");
+    }
 
 
 
@@ -123,11 +135,11 @@ class CityTest {
 
     public void printArray (Object[]array, String titleOfReport){//Object - прадед всех наших объектов, таким образом этот тип становиться универсальным (он общий), все объекты которые мы будем заводить, они будут наследовать этот метод для печати
         System.out.println("-------------------------------" + titleOfReport + "-------------------------------");//titleOfReport - сразу в методе будем писать сообщение
-        for (int i = 0; i < array.length; i++) {//1й способ, через фори
-            System.out.println(array[i]);
-        }
-//        for (Object o : cities) {//2й способ, через форич
-//            System.out.println(o);
+//        for (int i = 0; i < array.length; i++) {//1й способ, через фори
+//            System.out.println(array[i]);
 //        }
+        for (Object o : array) {//2й способ, через форич, общий поиск для печати из любого массива
+            System.out.println(o);
+        }
     }
 }
