@@ -1,4 +1,4 @@
-package homework_34_29_10.event.model;
+package homework_35_30_10.event.model;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

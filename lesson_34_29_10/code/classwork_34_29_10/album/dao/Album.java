@@ -6,15 +6,16 @@ public interface Album {
 
     boolean addPhoto (Photo photo);
 
-    boolean removePhoto (int photold, int albumid);
+    boolean removePhoto (int albumId, int photoId);
 
-    boolean updatePhoto (int photold, int albumid, String url);
+    boolean updatePhoto (int albumId, int photoId, String url);
 
-    Photo getPhotoFromAlbum (int photold, int albumid);
+    Photo getPhotoFromAlbum (int albumId, int photoId);
 
-    Photo[] getAllPhotoFromAlbum (int albumld);
+    Photo[] getAllPhotoFrom (int albumId);
 
-    Photo[] getPhotoBeetwenDate (LocalDate dateFrom, LocalDate dateTo);
+    Photo[] getPhotoBetweenDate (LocalDate dateFrom, LocalDate dateTo);
 
     int size ();
+
 }
