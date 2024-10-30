@@ -31,7 +31,7 @@ class CalenderImplTest {
         events[3] = new Event(4, "title 4", "url 4", now.plusDays(2));
 
 
-        //        //TODO add photos to album
+        //        //TODO add events to calender
                 for (int i = 0; i < 4; i++) {
                     calender.addEvent(events[i]);
                 }
