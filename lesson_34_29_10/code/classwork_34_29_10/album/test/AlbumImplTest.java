@@ -41,6 +41,7 @@ class AlbumImplTest {
         for (int i = 0; i < 6; i++) {
             album.addPhoto(photos[i]);
         }
+        printArray(photos);
     }
 
     @Test
@@ -76,16 +77,16 @@ class AlbumImplTest {
     @Test
     void getAllPhotoFromAlbum() {
         Photo[] expected = {photos[3], photos[4]};
-        Photo[] actual = album.getAllPhotoFrom(2);
+        Photo[] actual = album.getAllPhotoFromAlbum(2);
         assertArrayEquals(expected, actual);
     }
 
     @Test
     void getPhotoBetweenDate() {
         LocalDate today = LocalDate.now();
-        Photo[] actual = album.getPhotoBetweenDate(today.minusDays(2), today.minusDays(6));
+        Photo[] actual = album.getPhotoBetweenDate(today.minusDays(6), today.minusDays(2));
         Arrays.sort(actual,comparator);//делаем сортировку
-        Photo[] expected = {photos[5], photos[4], photos[2]};
+        Photo[] expected = {photos[2], photos[4], photos[5]};
         Arrays.sort(expected, comparator);//делаем сортировку
         assertArrayEquals(expected,actual);//сравниваем
     }
@@ -94,4 +95,12 @@ class AlbumImplTest {
     void size() {
         assertEquals(6, album.size());
     }
+
+    // print photos
+    private void printArray (Photo[] photos){
+        for (Photo p : photos) {
+            System.out.println(p);
+        }
+    }
+
 }

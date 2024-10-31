@@ -12,7 +12,7 @@ public interface Album {
 
     Photo getPhotoFromAlbum (int albumId, int photoId);
 
-    Photo[] getAllPhotoFrom (int albumId);
+    Photo[] getAllPhotoFromAlbum (int albumId);
 
     Photo[] getPhotoBetweenDate (LocalDate dateFrom, LocalDate dateTo);
 

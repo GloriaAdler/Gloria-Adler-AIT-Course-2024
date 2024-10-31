@@ -1,10 +1,12 @@
 package classwork_34_29_10.album.dao;
 
+import classwork25_10.ait.employee.model.Employee;
 import classwork_34_29_10.album.model.Photo;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.function.Predicate;
 
 public class AlbumImpl implements Album {
 
@@ -35,7 +37,7 @@ public class AlbumImpl implements Album {
 
         //find index where insert photo - позитивные кейсы
         int index = Arrays.binarySearch(photos, 0,size, photo, comparator);
-        index = index >= 0 ? index : -index -1;
+        index = index >= 0 ? index : -index -1;//стандартный подход
         System.arraycopy(photos, index, photos, index + 1, size - index);
         photos[index] = photo;
         size++;
@@ -74,20 +76,32 @@ public class AlbumImpl implements Album {
         return null;
     }
 
-    // этот метод мы еще не реализовали
     @Override
-    public Photo[] getAllPhotoFrom(int albumId) {
-        return new Photo[0];
+    public Photo[] getAllPhotoFromAlbum(int albumId) {
+        return findPhotoByPredicate(p -> p.getAlbumId() == albumId);
     }
 
-    // этот метод мы еще не реализовали
+
     @Override
     public Photo[] getPhotoBetweenDate(LocalDate dateFrom, LocalDate dateTo) {
-        return new Photo[0];
+        return findPhotoByPredicate(p -> p.getDate().toLocalDate().isAfter(dateFrom.minusDays(1)) && p.getDate().toLocalDate().isBefore(dateTo.plusDays(1)));
+
     }
 
     @Override
     public int size() {
         return size;
+    }
+
+    //служебный метод для отбора из массива по критерию, взяли из CompanyImpl про Employee
+    private Photo[] findPhotoByPredicate(Predicate<Photo> predicate) {
+
+        Photo[] res = new Photo[size];
+        int j = 0; //это индексы массива
+        for (int i = 0; i < size; i++) {
+            if (predicate.test(photos[i]));
+            res[j++] = photos[i];
+        }
+        return Arrays.copyOf(res, j);//таким способом обрезаем "хвост" из null
     }
 }
