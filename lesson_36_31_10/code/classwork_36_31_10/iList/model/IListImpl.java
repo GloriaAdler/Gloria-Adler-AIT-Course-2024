@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 //шаг увеличения массива 1,5
-public class IListImpl implements IList{
+public class IListImpl <E> implements IList <E>{//<E> - джинерик
 
     Object[] elements;
     private int size;
@@ -60,31 +60,94 @@ public class IListImpl implements IList{
 
     @Override
     public boolean add(int index, Object element) {
-        return false;
+        if (index == size){//добавление в конец массива
+            add(element);
+            return true;
+        }
+        //добавляем в середину массива
+        checkIndex (index);
+        ensureCapacity();
+        System.arraycopy(elements, index, elements, index + 1, size++ - index);
+        elements[index] = element;
+        return true;
+    }
+
+    private void checkIndex (int index){
+        //индекс не может быть меньше 0 и не может быть больше длины (size)
+        if (index < 0 || index > size){
+            throw new IndexOutOfBoundsException("Wrong index: " + index);
+        }
     }
 
     @Override
-    public Object remove(int index) {
-        return null;
+    public E remove(int index) {
+        checkIndex(index);
+        E el = (E) elements[index]; //(E) кастинг
+        //удаляем элемент
+        System.arraycopy(elements, index + 1, elements, index, --size - index);
+        elements[size] = null;
+        return el;
+    }
+//    После выполнения System.arraycopy, когда элементы сдвигаются на одну позицию назад,
+//    последний элемент становится дублированным на предпоследней позиции.
+//    Затирание последнего элемента elements[size] = null; выполняется для очистки этой дублированной позиции,
+//    иначе в списке может остаться ссылка на ненужный объект, что может вызвать утечку памяти.
+//    Этот шаг необходим для правильной работы списка и предотвращения утечек памяти. В Java объекты не удаляются
+//    сразу после вызова remove, и сборка мусора может произойти позже. Поэтому затирание последнего элемента является
+//    хорошей практикой для избежания утечек памяти.
+
+    @Override
+    public E get(int index) {
+        checkIndex(index);
+        return (E) elements[index];//(E) кастинг
     }
 
     @Override
-    public Object get(int index) {
-        return null;
+    public E set(int index, E element) {
+        checkIndex(index);
+        E updated = (E) elements[index];
+        elements [index] = element;
+        return updated;
     }
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        if (o != null){
+            for (int i = 0; i < size; i++) {
+                if (elements[i].equals(o)){
+                    return i;
+                }
+            }
+        }else {
+            for (int i = 0; i < size; i++) {
+                if (elements[i] == null){
+                    return i;
+                }
+            }
+        }
+        return -1;//-1 - ошибка
     }
 
     @Override
     public int lastIndexOf(Object o) {
+
         return 0;
     }
 
     @Override
     public Iterator iterator() {
-        return null;
+        return new Iterator() {//new Iterator() - после введения, прилетает сразу шаблон для заполнения
+            int i = 0;//указатель на текущий элемент коллекции
+
+            @Override
+            public boolean hasNext() {
+                return i < size;//true когда "указатель" находится внутри коллекции
+            }
+
+            @Override
+            public Object next() {
+                return (E) elements[i++];
+            }
+        };
     }
 }

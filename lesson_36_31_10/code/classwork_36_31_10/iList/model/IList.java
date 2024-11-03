@@ -30,6 +30,8 @@ public interface IList <E> extends Iterable <E> {//<E> - элемент лист
 
     E get(int index);
 
+    E set (int index, E element);
+
     int indexOf (Object o);//ищет с лева на право
 
     int lastIndexOf (Object o);//ищет с права на лево

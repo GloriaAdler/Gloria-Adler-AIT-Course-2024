@@ -1,8 +1,10 @@
 package homework_18_10.computer.model;
 
+import classwork_37_1_11.city_bus.Bus;
+
 import java.util.Objects;
 
-public abstract class Computer {
+public abstract class Computer implements Comparable <Computer>{
 
     private String cpu;
     private int ram; // 8, 16, 32
@@ -71,5 +73,10 @@ public abstract class Computer {
         sb.append(", price=").append(price);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public int compareTo(Computer o) {
+        return Integer.compare (this.getRam(), o.getRam());//Integer.compare - сортировка от меньшего к большему, - Integer.compare - от большего к меньшему
     }
 }
