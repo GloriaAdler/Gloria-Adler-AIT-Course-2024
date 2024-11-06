@@ -1,11 +1,20 @@
 package homework_39_5_11.currency;
 //Создайте enum с кодами валют и их текущими курсами к евро. Убедитесь, что в списке нет дублирующихся кодов валют. Выведите список валют и их курсов на экран. Реализуйте возможность для пользователя выбрать желаемую валюту, ввести ее количество и узнать, сколько он получит при обмене на евро.
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class CurrencyExchangeApp {
     public static void main(String[] args) {
 
+        Set <Currency> currencySet = new HashSet<>();//список валют с курсами из ENUM
+
         Scanner scanner = new Scanner(System.in);
+
+        for (Currency c : Currency.values()) {
+            currencySet.add(c);
+        }
+        System.out.println(currencySet);
 
         //список доступных валют
         System.out.println("Select a currency to exchange to (enter the number):");
@@ -41,4 +50,5 @@ public class CurrencyExchangeApp {
         double sumInSelectedCurrency = sumInCurrency * selectedCurrency.getRateToEuro();
         System.out.printf("You will receive %.2f €", sumInSelectedCurrency);
     }
+
 }

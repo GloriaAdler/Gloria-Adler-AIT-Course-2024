@@ -1,6 +1,8 @@
-package homework_39_5_11.superMarket.dao;
+package classwork_40_6_11.superMarketArrayList.dao;
 
-public interface Supermarket <Product> extends Iterable <Product>{
+import classwork_40_6_11.superMarketArrayList.model.Product;
+
+public interface Supermarket extends Iterable <Product> {
 
     boolean addProduct (Product product);
 

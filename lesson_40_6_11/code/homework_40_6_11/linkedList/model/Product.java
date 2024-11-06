@@ -1,4 +1,4 @@
-package homework_39_5_11.superMarket.model;
+package homework_40_6_11.linkedList.model;
 
 import java.time.LocalDate;
 import java.util.Objects;
