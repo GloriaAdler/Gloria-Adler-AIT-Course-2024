@@ -17,7 +17,8 @@ public class TravelAgency {
 
     public static void main(String[] args) {
 
-        List<Tourist> tourists = getTourists();
+        List<Tourist> tourists = fillListTourists();
+        tourists.forEach(System.out::println);
 
         //Какие страны наиболее популярны?
         System.out.println("Most popular countries:");
@@ -28,10 +29,8 @@ public class TravelAgency {
         findTopTourist(tourists);
     }
 
-    private static List<Tourist> getTourists() {
+    private static List<Tourist> fillListTourists() {
         return List.of(
-       // List <Tourist> tourists = List.of(
-
                 new Tourist("Olesia", "Iran", "Kyrgyzstan", "United Arab Emirates", "France", "Italy", "Portugal", "Spain"),
                 new Tourist("Bilbo Baggins", "Italy", "Spain", "Turkey"),
                 new Tourist("Tatyana", "Italy", "Spain", "Italy", "Greece", "Turkey"),
@@ -60,7 +59,6 @@ public class TravelAgency {
                 new Tourist("Emma", "Greece", "Italy", "Spain", "Cyprus"),
                 new Tourist("Aiden", "Italy", "Greece", "Spain", "Turkey")
         );
-        //return tourists;
     }
 
     private static void findMostPopularCountries(List<Tourist> tourists) {

@@ -23,10 +23,6 @@ public class Tourist {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Tourist{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", countries=").append(countries);
-        sb.append('}');
-        return sb.toString();
+        return "Name: " + name + " -> " + countries;
     }
 }
