@@ -12,7 +12,7 @@ public class NumberFilterAppl {
         // Фильтрация простых чисел с использованием stream()
         List<Integer> primes = numbers.stream()//numbers.stream() - создает поток из списка чисел.
                 .filter(NumberFilterAppl::isPrime)//.filter(PrimeFilterApp::isPrime) - создаем метод isPrime, который проходится по каждому числу и отбирает только те, которые возвращают true
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());//собираем новый список без "непростых чисел"
 
         // Выводим список простых чисел
         System.out.println("Primes: " + primes);//Простые числа: 11, 13, 17, 19
@@ -21,8 +21,8 @@ public class NumberFilterAppl {
     // Метод для проверки, является ли число простым
     private static boolean isPrime(int number) {
         if (number < 2) return false;
-        return IntStream.rangeClosed(2, (int) Math.sqrt(number))//проверяем, делится ли оно на любое число от 2 до его квадратного корня.
-                .allMatch(n -> number % n != 0);
+        return IntStream.rangeClosed(2, (int) Math.sqrt(number))//проверяем, делится ли оно на любое число от 2 до его квадратного корня. IntStream.rangeClosed(start, end) создает поток чисел от start до end включительно. (int) - кастинг, потому что Math.sqrt вернет double
+                .allMatch(n -> number % n != 0);//number не делится на n; allMatch возвращает true, если allMatch вернёт false, это значит, что number имеет делители, и поэтому оно не является простым.
     }
 
 }
