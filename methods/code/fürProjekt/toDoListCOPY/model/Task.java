@@ -1,11 +1,9 @@
-package classwork_46_14_11.AIT.toDoList.model;
+package fürProjekt.toDoListCOPY.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Objects;
 
 public class Task implements Comparable<Task>, Serializable { // нужен для использования байтового потока IO
-
     private String task; // содержание задачи
     private LocalDate date; // дата создания задачи
 
@@ -30,18 +28,6 @@ public class Task implements Comparable<Task>, Serializable { // нужен дл
 
     public void setDate(LocalDate date) {
         this.date = date;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Task task1)) return false;
-        return Objects.equals(task, task1.task) && Objects.equals(date, task1.date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(task, date);
     }
 
     // метод toString

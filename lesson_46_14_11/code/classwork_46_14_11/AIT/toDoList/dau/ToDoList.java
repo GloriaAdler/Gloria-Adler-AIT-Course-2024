@@ -1,17 +1,20 @@
 package classwork_46_14_11.AIT.toDoList.dau;
-
 import classwork_46_14_11.AIT.toDoList.model.Task;
-
 import java.util.List;
 
 public interface ToDoList {
-    // add Task
-    boolean addTask(Task task);
-    // remove Task
-    Task removeTask(int taskNumber);
-    // print list of Tasks
-    void viewTasks();
+
+    boolean addTask(Task task);// add Task
+
+    Task removeTask(int taskNumber); // remove Task
+
+    void viewTasks(); // print list of Tasks
+
     List<Task> getAllTasks(); // взять весь список
-    // quantity of tasks
-    int quantity();
+
+    int quantity(); // quantity of tasks
+
+    void saveTasks(String fileName);
+
+    void loadTasks(String fileName);
 }

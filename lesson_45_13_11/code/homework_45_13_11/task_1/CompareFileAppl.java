@@ -38,7 +38,8 @@ public class CompareFileAppl {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
+//        FileInputStream file1 = null;
+//        FileInputStream file2 = null;
         try (FileInputStream file1 = new FileInputStream(fileOne.toFile())) {// Сравнение байтов в обоих файлах
         try (FileInputStream file2 = new FileInputStream(fileTwo.toFile())) {
 

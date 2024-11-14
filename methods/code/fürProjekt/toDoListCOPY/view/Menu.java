@@ -1,4 +1,4 @@
-package classwork_46_14_11.AIT.toDoList.model;
+package fürProjekt.toDoListCOPY.view;
 
 import java.io.Serializable;
 
